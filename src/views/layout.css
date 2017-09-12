@@ -1,0 +1,101 @@
+@import '../style/style.css';
+@import '../style/animate.css';
+
+* {
+    font-family: "Biaodian Pro Sans CNS", "Helvetica Neue", Helvetica, Arial, "Zhuyin Heiti", "Han Heiti", sans-serif;
+    font-size: 1.5vw;
+}
+ .sidebar>ul>.selected {
+    background: rgba(255,0,0,0.2);
+}
+
+ .logo {
+  height: 32px;
+  background: #333;
+  border-radius: 6px;
+  margin: 16px;
+}
+
+.layout {
+	height: 100vh;
+	display: flex;
+	overflow: auto;
+}
+.sidebar {
+	width: 25vw;
+    display: flex;
+    flex-direction: column;
+	
+}
+.avator {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 1vw;
+    background: rebeccapurple;
+}
+.avator>img{
+    width: 8vw;
+    height: 8vw;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+.avator:hover img {
+    position: relative;
+    animation: wobble 2s infinite linear;
+}
+.avator::after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    width: 25vw;
+    bottom: 0px;
+}
+.sidebar>ul {
+    flex: 1;
+}
+.sidebar>ul>li {
+    padding: 1vw;
+    display: flex;
+    align-items: center;
+}
+.sidebar>ul>li:hover {
+    background: rgba(9,9,9,0.1);
+}
+.sidebar>ul>li>.icon {
+    color: #FFDC00;
+    margin-right:0.7vw;
+    font-size: 1.7vw;
+}
+.sidebar>ul>li>.text {
+    flex: 1;
+}
+.ct {
+    border-left: 1px rgba(0,0,0,0.1) solid;
+}
+
+/*<div className="layout">
+            <div className="sidebar">
+              <div/>
+              <ul>
+                <li key="1">
+                  <Icon type="smile-o" />
+                  <span>开心每一天</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <header />
+              <content>
+                <div >
+                  Bill is a cat.
+                </div>
+              </content>
+              <footer>
+                  HuangHongRui.
+              </footer>
+            </div>
+      </div>*/
