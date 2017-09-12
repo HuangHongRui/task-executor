@@ -22,17 +22,7 @@ export default class View extends React.Component {
                   <span>66</span>
                 </li>
 
-                <li key="2">
-                  <Icon type="smile-o" className="icon" />
-                  <span className='text'>开心每一天</span>
-                  <span>66</span>
-                </li>
-
-                <li key="3">
-                  <Icon type="smile-o" className="icon" />
-                  <span className='text'>开心每一天</span>
-                  <span>66</span>
-                </li>
+               
 
               </ul>
               <button>
@@ -43,11 +33,29 @@ export default class View extends React.Component {
             </div>
 
             <div className="ct">
-              <header />
+              <header>
+                  <h1>开心每一天</h1>
+                  <div>
+                    <button>
+                        <Icon type="bars" />
+                    排序</button>
+                    <button>
+                        <Icon type="ellipsis" />
+                    </button>
+                  </div>
+              </header>
               <content>
-                <div >
-                  Bill is a cat.
-                </div>
+                <ul>
+                  <li>
+                      <div>
+                        <Icon type="pushpin-o" className="icon"/>
+                        <span>
+                          Bill is a cat.
+                        </span>
+                      </div>
+                      <Icon type="minus" className="icon"/>
+                  </li>
+                </ul>
               </content>
               <footer>
                   HuangHongRui.
