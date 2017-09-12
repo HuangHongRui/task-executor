@@ -63,6 +63,7 @@
 }
 .sidebar>ul>li:hover {
     background: rgba(9,9,9,0.1);
+    cursor: pointer;
 }
 .sidebar>ul>li>.icon {
     color: #FFDC00;
@@ -71,6 +72,23 @@
 }
 .sidebar>ul>li>.text {
     flex: 1;
+}
+.sidebar>button{
+    transition-duration: 0.4s;
+    cursor: pointer;
+    outline:none;
+    background: transparent;
+    color: #FFDC00;
+    border: none;
+    max-height: 3.5vw;
+    border-top: solid 1px rgba(0,0,0,0.1);
+}
+.sidebar>button>span {
+    color: rgba(0,0,0,0.6);
+}
+.sidebar>button:hover {
+    color: #fff;
+    background: #FFDC00;
 }
 .ct {
     border-left: 1px rgba(0,0,0,0.1) solid;

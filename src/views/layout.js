@@ -37,6 +37,8 @@ export default class View extends React.Component {
               </ul>
               <button>
                 <Icon type="api" />
+                  <span>新建清单</span>
+                <Icon type="api" />
               </button>
             </div>
 
