@@ -15,5 +15,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://github.com/HuangHongRui/task-executor/build"
+  "homepage": "https://huanghongrui.github.io/task-executor/build"
 }
