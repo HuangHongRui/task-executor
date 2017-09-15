@@ -1,11 +1,10 @@
 import {createStore, combineReducers, applyMiddleware, compose} from 'redux';
-import {reducer as todoList} from './todos'
+import {reducer as todoReducer} from './todos'
 const reducer = combineReducers({
-
+    todos: todoReducer
 });
 
 const middlewares = [];
-
 const  storeEnhancers = compose(
     applyMiddleware(...middlewares)
 );

@@ -6,7 +6,8 @@ export default (state = [], action) => {
             return [{
                 id : action.id,
                 text: action.text,
-                select: false
+                timer: action.timer,
+                selected: false
             },
                 ...state
         ]
@@ -22,7 +23,7 @@ export default (state = [], action) => {
         }
         case REMOVE_TODO : {
             return state.filter((todoItem) => {
-                return  todoItem.id !== target.id
+                return  todoItem.id !== action.id
             })
         }
         default :{

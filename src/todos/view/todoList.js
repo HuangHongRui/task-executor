@@ -1,13 +1,15 @@
-import React, {Component} from 'react';
-import {Icon } from 'antd';
+//父组件
+import React from 'react';
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux'
+import {Icon} from 'antd';
+import TodoItem from './todoItem'
+import {toggleTodo, removeTodo} from "../actions";
+import { FilterTypes } from '../../constants.js';
+import AddTodo from './addTodo'
 
-export default class TodoList extends Component {
-    constructor(props) {
-        super(props);
-
-    }
-    render() {
-        return (
+const TodoList = ({todos, onToggleTodo, onRemoveTodo}) => {
+    return (
             <div className="ct">
                 <header>
                     <h1>开心每一天</h1>
@@ -20,23 +22,60 @@ export default class TodoList extends Component {
                         </button>
                     </div>
                 </header>
-                <content>
+                <div className='content'>
                     <ul>
-                        {/*<li>*/}
-                            {/*<div>*/}
-                                {/*<Icon type="pushpin-o" className="icon"/>*/}
-                                {/*<span>*/}
-                          {/*Bill is a cat.*/}
-                        {/*</span>*/}
-                            {/*</div>*/}
-                            {/*<Icon type="minus" className="icon"/>*/}
-                        {/*</li>*/}
+                        {
+                            todos.map((item) => (
+                                <TodoItem
+                                key = {item.id}
+                                text = {item.text}
+                                selected = { item.selected }
+                                timer = {item.timer}
+                                onToggle = {() => {onToggleTodo(item.id)}}
+                                onRemove = {() => {onRemoveTodo(item.id)}}
+                                />
+                            ))
+                        }
                     </ul>
-                </content>
-                <footer>
-                    <input type="text" placeholder='新增待办' />
-                </footer>
+                </div>
+                <AddTodo />
             </div>
-        )
+    )
+};
+
+
+TodoList.propTypes = {
+    todos : PropTypes.array.isRequired
+};
+
+const selectVisibleTodos = (todos,filter) => {
+    switch (filter) {
+        case FilterTypes.All:
+            return todos;
+        case FilterTypes.SELECTED:
+            return todos.filter(item => todos.selected);
+        case FilterTypes.UNSELECTED:
+            return todos.filter(item => !todos.selected);
+        default:
+            throw new Error('UNSUPPORTED FILTER')
     }
-}
+};
+
+const mapStateToProps = (state) => {
+    return {
+        todos : selectVisibleTodos(state.todos, state.filter)
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onToggleTodo: (id) => {
+            dispatch(toggleTodo(id))
+        },
+        onRemoveTodo : (id) => {
+            dispatch(removeTodo(id))
+        }
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodoList)

@@ -87,7 +87,7 @@
     background: transparent;
     color: #FFDC00;
     border: none;
-    max-height: 3.5vw;
+    height: 2.5vw;
     border-top: solid 1px rgba(0,0,0,0.1);
 }
 .sidebar>button>span {
@@ -155,26 +155,26 @@
     color: white;
 }
 
-.ct>content{
+.ct>.content{
     flex: 1;
     overflow: auto;
 }
-.ct>content>ul{
+.ct>.content>ul{
 }
 
-.ct>content>ul>li{
+.ct>.content>ul>li{
     position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1.5vw;
 }
-.ct>content>ul>li .icon{
+.ct>.content>ul>li .icon{
     padding-right:  1.5vw;
     cursor: pointer;
 
 }
-.ct>content>ul>li::after {
+.ct>.content>ul>li::after {
     content: '';
     display: block;
     position: absolute;
@@ -185,6 +185,14 @@
 footer {
     display: flex;
     justify-content: center;
+}
+footer>input {
+    width: 100%;
+    text-align : center;
+    outline: none;
+    border: none;
+    height: 2.5vw;
+    border-top: solid 1px rgba(0,0,0,0.1);
 }
 /*
 <content>

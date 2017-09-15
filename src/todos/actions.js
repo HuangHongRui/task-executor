@@ -1,12 +1,12 @@
 import {ADD_TODO, TOGGLE_TODO, REMOVE_TODO} from "./actionTypes";
 
-todoID
-
-export const addTodo = (id) => ({
+let todoID = 0;
+export const addTodo = (text,timer) => ({
     type: ADD_TODO,
     id : todoID++,
+    text: text,
     selected: false,
-    text: text
+    timer: timer
 });
 
 export const toggleTodo = (id) => ({
@@ -14,7 +14,7 @@ export const toggleTodo = (id) => ({
     id: id,
 });
 
-export const RemoveTodo = (id) => ({
+export const removeTodo = (id) => ({
     type: REMOVE_TODO,
     id: id
 });
