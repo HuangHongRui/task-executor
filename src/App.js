@@ -1,7 +1,7 @@
 import React from 'react';
 import 'animate.css';
 import './style/app.css';
-import {view as Layout} from'./views'
+import {view as Layout} from'./todos'
 
 export default function App() {
     return(
