@@ -4,9 +4,7 @@ import {Icon } from 'antd';
 
 const TodoItem = ({onToggle, onRemove, selected, text, timer}) => {
         return  (
-            <li style = {{
-                display: text? 'defalut': 'none'
-            }}>
+            <li>
                 <div>
                     <Icon className="icon" type={selected ? 'pushpin' : 'pushpin-o'} onClick={onToggle} />
                     <span style ={{textDecoration: selected ? 'line-through' : 'none'}}> {text} </span>
@@ -16,6 +14,7 @@ const TodoItem = ({onToggle, onRemove, selected, text, timer}) => {
             </li>
         )
 };
+
 TodoItem.propTypes = {
     onToggle: PropTypes.func.isRequired,
     onRemove: PropTypes.func.isRequired,

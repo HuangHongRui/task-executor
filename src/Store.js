@@ -1,6 +1,8 @@
 import {createStore, combineReducers, applyMiddleware, compose} from 'redux';
-import {reducer as todoReducer} from './todos'
+import {reducer as itemReducer} from './sidebar';
+import {reducer as todoReducer} from './todos';
 const reducer = combineReducers({
+    items: itemReducer,
     todos: todoReducer
 });
 

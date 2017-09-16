@@ -1,10 +1,15 @@
 import React from 'react';
+import MenuList from './sidebar/view/menuList'
+import TodoList from './todos/view/todoList'
 import 'animate.css';
 import './style/app.css';
-import {view as Layout} from'./todos'
+import './style/layout.css'
 
 export default function App() {
-    return(
-        <Layout />
-    )
+    return (
+      <div className="layout">
+          <MenuList/>
+          <TodoList />
+      </div>
+    );
 }

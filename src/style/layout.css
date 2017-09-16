@@ -1,0 +1,209 @@
+@import 'style.css';
+@import 'animate.css';
+
+* {
+    font-family: "Biaodian Pro Sans CNS", "Helvetica Neue", Helvetica, Arial, "Zhuyin Heiti", "Han Heiti", sans-serif;
+    font-size: 1.5vw;
+    user-select: none;
+}
+.layout {
+    overflow: hidden !important;
+}
+ .sidebar>ul>.selected {
+    background: rgba(255,0,0,0.2);
+}
+
+ .logo {
+  height: 32px;
+  background: #333;
+  border-radius: 6px;
+  margin: 16px;
+}
+
+.layout {
+	height: 100vh;
+	display: flex;
+	overflow: auto;
+}
+.sidebar {
+    min-width: 25vw;
+    display: flex;
+    flex-direction: column;
+
+}
+.avator {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vw;
+    background: rebeccapurple;
+    min-height: 21.8vh;
+}
+.avator>img{
+    width: 8vw;
+    height: 8vw;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+.avator:hover img {
+    position: relative;
+    animation: wobble 2s infinite linear;
+}
+.avator::after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    width: 25vw;
+    bottom: 0;
+}
+.sidebar>ul {
+    flex: 1;
+    overflow: auto;
+}
+.sidebar>ul>li {
+    padding: 1vw;
+    display: flex;
+    align-items: center;
+}
+.sidebar>ul>li:hover {
+    background: rgba(9,9,9,0.1);
+    cursor: pointer;
+}
+.sidebar>ul>li>.icon {
+    color: #FFDC00;
+    margin-right:0.7vw;
+    font-size: 1.7vw;
+}
+.sidebar>ul>li>.text {
+    flex: 1;
+}
+.sidebar>div>input{
+    transition-duration: 0.4s;
+    cursor: pointer;
+    outline:none;
+    background: transparent;
+    border: none;
+    height: 2.5vw;
+    border-top: solid 1px rgba(0,0,0,0.1);
+    color: rgba(0,0,0,0.6);
+    width: 100%;
+    text-align: center;
+}
+
+/**/
+
+
+
+
+
+/**/
+.ct {
+    border-left: 1px rgba(0,0,0,0.1) solid;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+.ct>header {
+    min-height: 14.7vw;
+    border: solid 1px rgba(0,0,0,0.1);
+    background-image: url(https://images.pexels.com/photos/401107/pexels-photo-401107.jpeg?w=940&h=650&auto=compress&cs=tinysrgb);
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+
+.ct>header>h1 {
+    color: #eee;
+    line-height:1vw;
+    padding: 3vw;
+    cursor: default;
+}
+
+.ct>header>div {
+    padding: 1.5vw;
+}
+
+.ct>header>div>button {
+    background: transparent;
+    color: #fff;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    padding: 0.2vw 1vw;
+    margin: 0.5vw;
+    border: none;
+    -webkit-border-radius: .5vw;
+    -moz-border-radius: .5vw;
+    border-radius: .5vw;
+    outline: none;
+    cursor: pointer;
+}
+
+.ct>header>div>button:hover {
+    background-color: #FFDC00;
+    color: white;
+}
+
+.ct>.content{
+    flex: 1;
+    overflow: auto;
+}
+.ct>.content>ul{
+}
+
+.ct>.content>ul>li{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5vw;
+}
+.ct>.content>ul>li .icon{
+    padding-right:  1.5vw;
+    cursor: pointer;
+
+}
+.ct>.content>ul>li::after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    bottom: 0;
+    width:71.5vw;
+}
+footer {
+    display: flex;
+    justify-content: center;
+}
+footer>input {
+    width: 100%;
+    text-align : center;
+    outline: none;
+    border: none;
+    height: 2.5vw;
+    border-top: solid 1px rgba(0,0,0,0.1);
+}
+/*
+<content>
+        <ul>
+              <li>
+                  <Icon type="pushpin-o" />
+                  <span>
+                    Bill is a cat.
+                  </span>
+                  <Icon type="minus" />
+              </li>
+            </ul>
+          </content>
+*/
+
+
+
+

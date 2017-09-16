@@ -1,4 +1,4 @@
-import view from './view/layout';
+import view from '../App';
 import reducer from './reducer'
 import * as actions from './actions'
 

@@ -35,6 +35,7 @@ class AddTodo extends Component{
         )
     }
 }
+
 addTodo.propTypes = {
     onAdd: PropTypes.func.isRequired
 };
@@ -46,4 +47,5 @@ const mapDispatchToProps = (dispatch) => {
       }
   }
 };
+
 export default connect(null, mapDispatchToProps)(AddTodo);

@@ -70,9 +70,11 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         onToggleTodo: (id) => {
+            console.log(id);
             dispatch(toggleTodo(id))
         },
         onRemoveTodo : (id) => {
+            console.log(id);
             dispatch(removeTodo(id))
         }
     };
