@@ -16,6 +16,8 @@ class AddItem extends Component{
             if(e.target.value.trim() !== ''){
                 this.props.onAdd(input.value);
                 input.value = '';
+            }else{
+                alert("内容不可为空.")
             }
          }
     }
@@ -26,8 +28,8 @@ class AddItem extends Component{
 
     render() {
         return (
-            <div>
-                <input type="text" placeholder='新建目录|回车创建' ref={this.refInput} onKeyUp={this.menuSubmit}/>
+            <div className='addItem'>
+                <input type="text" placeholder='新建目录 | 回车创建' ref={this.refInput} onKeyUp={this.menuSubmit}/>
             </div>
         )
     }

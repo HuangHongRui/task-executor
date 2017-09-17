@@ -2,28 +2,30 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux'
 import MenuItem from './menuItem'
-import {removeTodo} from "../../todos/actions";
+import {removeItem, selectedItem} from "../actions";
 import AddItem from './addItem'
 
 
-const MenuList  = ({items,onRemoveTodo}) => {
+const MenuList  = ({items,onRemoveItem, onSelectedItem}) => {
         return (
             <div className="sidebar">
               <div className="avator">
                 <img src="https://avatars3.githubusercontent.com/u/26321899?v=4&s=88" alt="Avator"/>
               </div>
+                <AddItem />
               <ul>
                   {
                       items.map((item) => (
                           <MenuItem
+                              selected = {item.selected}
                               key = {item.id}
                               text = {item.text}
-                              onRemove = {() => {onRemoveTodo(item.id)}}
+                              onRemove = {() => {onRemoveItem(item.id)}}
+                              onSelected = {() => {onSelectedItem(item.id)}}
                           />
                       ))
                   }
               </ul>
-                <AddItem />
             </div>
         )
 };
@@ -37,8 +39,12 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onRemoveTodo : (id) => {
-            dispatch(removeTodo(id))
+        onRemoveItem : (id) => {
+            dispatch(removeItem(id));
+        },
+        onSelectedItem : (id) => {
+            console.log(id);
+            dispatch(selectedItem(id));
         }
     };
 };
