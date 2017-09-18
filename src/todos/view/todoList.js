@@ -12,7 +12,7 @@ const TodoList = ({todos, onToggleTodo, onRemoveTodo}) => {
     return (
             <div className="ct">
                 <header>
-                    <h1>开心每一天</h1>
+                    <h1>Title</h1>
                     <div>
                         <button>
                             <Icon type="bars" />
